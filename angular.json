@@ -1,0 +1,21 @@
+{
+  "build": {
+    "executor": "@nrwl/angular:webpack-browser",
+    "options": {
+      "customWebpackConfig": {
+        "path": "apps/api/webpack.config.js"
+      }
+    }
+  },
+  "serve": {
+    "executor": "@nrwl/angular:webpack-server"
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "project-ecommerce": "apps/project-ecommerce",
+    "project-ecommerce-e2e": "apps/project-ecommerce-e2e"
+  }
+}
