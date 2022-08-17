@@ -1,7 +1,7 @@
 {
   "projectType": "application",
   "sourceRoot": "apps/project-ecommerce/src",
-  "prefix": "fullstack-node-portfolio-app",
+  "prefix": "ecommerce",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

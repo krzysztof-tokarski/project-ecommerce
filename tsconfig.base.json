@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fullstack-node-portfolio-app/api-interfaces": [
-        "libs/api-interfaces/src/index.ts"
-      ]
+      "@core/*": ["apps/project-ecommerce/src/app/core/*"],
+      "@environments/*": ["apps/project-ecommerce/src/app/environments/*"],
+      "@features/*": ["apps/project-ecommerce/src/app/features/*"],
+      "@project-ecommerce/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@shared/*": ["apps/project-ecommerce/src/app/shared/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
