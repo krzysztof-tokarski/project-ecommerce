@@ -1,0 +1,8 @@
+@use 'apps/project-ecommerce/src/styles/variables' as *;
+
+.logo {
+  color: $accent-color;
+  text-transform: uppercase;
+  font-family: fantasy;
+  font-style: italic;
+}
