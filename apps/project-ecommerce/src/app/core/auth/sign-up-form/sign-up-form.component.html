@@ -2,7 +2,7 @@
   <ecommerce-logo [sizeInPixels]="35"></ecommerce-logo>
 </header>
 <main>
-  <mat-card>
+  <mat-card class="form-card">
     <h2 class="form-header">Sign Up Form</h2>
     <div class="form-container">
       <div>
@@ -10,8 +10,10 @@
         </ecommerce-dynamic-form>
       </div>
       <div>
-        <button mat-raised-button color="primary" (click)="submitForm()">Sign Up</button>
+        <button [disabled]="signUpForm.invalid" mat-raised-button color="primary" (click)="submitForm()">Sign
+          Up</button>
       </div>
     </div>
   </mat-card>
+  <span class="have-account">Already have an account? <a routerLink="../sign-in">Log in.</a></span>
 </main>
