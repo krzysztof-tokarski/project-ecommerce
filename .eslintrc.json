@@ -4,7 +4,8 @@
   "plugins": ["@nrwl/nx"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"]    },
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"]
+    },
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
