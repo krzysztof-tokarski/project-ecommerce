@@ -4,12 +4,13 @@ import { RouterModule } from '@angular/router';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { SharedModule } from '@shared/shared-module/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DynamicFormModule } from '@shared/accessory-modules/dynamic-form/dynamic-form.module';
 
 @NgModule({
   declarations: [
     SignUpFormComponent
   ],
-  imports: [CommonModule, SharedModule, ReactiveFormsModule, FormsModule, RouterModule.forChild([
+  imports: [CommonModule, DynamicFormModule, SharedModule, ReactiveFormsModule, FormsModule, RouterModule.forChild([
     {
       path: 'sign-up',
       component: SignUpFormComponent,
