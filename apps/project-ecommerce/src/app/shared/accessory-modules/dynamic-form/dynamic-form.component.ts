@@ -1,26 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { FormInputBase, } from './models/form-input-base.class';
 
 
 @Component({
-  selector: 'ecommerce-dynamic-form[formFields]',
+  selector: 'ecommerce-dynamic-form[formFields][form]',
   templateUrl: './dynamic-form.component.html',
   styleUrls: ['./dynamic-form.component.scss'],
 })
-export class DynamicFormComponent implements OnInit {
+export class DynamicFormComponent {
   @Input() public formFields!: FormInputBase<string | boolean>[];
-
-  protected form!: FormGroup;
-
-  public ngOnInit() {
-    const group: {
-      [key: string]: AbstractControl,
-    } = {};
-
-    this.formFields.forEach((field) => {
-      group[field.key] = new FormControl(field.value || '', [...field.validators || [], Validators.required]);
-    });
-    this.form = new FormGroup(group);
-  }
+  @Input() public form!: FormGroup;
 }
