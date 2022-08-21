@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormInputBase } from '../../models/form-input-base.class';
 
 @Component({
-  selector: 'ecommerce-dynamic-form-input',
+  selector: 'ecommerce-dynamic-form-input[field][form]',
   templateUrl: './dynamic-form-input.component.html',
   styleUrls: ['./dynamic-form-input.component.scss'],
 })

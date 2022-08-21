@@ -1,21 +1,49 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { DynamicFormService } from '@shared/accessory-modules/dynamic-form/dynamic-form.abstract.service';
+import { FormInput } from '@shared/accessory-modules/dynamic-form/models/form-input';
+import { FormInputBase } from '@shared/accessory-modules/dynamic-form/models/form-input-base.class';
 import { SignUpForm } from './sign-up-form.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class SignUpService {
+@Injectable()
+export class SignUpService extends DynamicFormService {
+  public readonly formFields: FormInputBase<string | boolean>[] = [
+    new FormInput({
+      label: 'First name',
+      key: 'firstName',
+      type: 'text',
+      required: true,
+    }),
+    new FormInput({
+      label: 'Last name',
+      key: 'lastName',
+      type: 'text',
+      required: true,
+    }),
+    new FormInput({
+      label: 'Email',
+      key: 'email',
+      type: 'text',
+      required: true,
+    }),
+    new FormInput({
+      label: 'Password',
+      key: 'password',
+      type: 'password',
+      required: true,
+    }),
+    new FormInput({
+      label: 'Confirm password',
+      key: 'confirm-password',
+      type: 'password',
+      required: true,
+    }),
+  ];
 
-  constructor(private fb: NonNullableFormBuilder) { }
+  public readonly form!: FormGroup<SignUpForm>;
 
-  public createSignUpForm(): FormGroup<SignUpForm> {
-    return this.fb.group({
-      firstName: this.fb.control('', Validators.required),
-      lastName: this.fb.control('', Validators.required),
-      email: this.fb.control('', Validators.required),
-      password: this.fb.control('', Validators.required),
-      confirmPassword: this.fb.control('', Validators.required),
-    })
+  constructor() {
+    super();
+    super.initalizeForm();
   }
 }
