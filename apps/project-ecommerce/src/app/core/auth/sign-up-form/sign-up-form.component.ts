@@ -12,4 +12,8 @@ export class SignUpFormComponent {
   protected formFields = this.signUpService.formFields;
 
   constructor(private signUpService: SignUpService) { }
+
+  protected submitForm() {
+    this.signUpService.submitForm();
+  }
 }

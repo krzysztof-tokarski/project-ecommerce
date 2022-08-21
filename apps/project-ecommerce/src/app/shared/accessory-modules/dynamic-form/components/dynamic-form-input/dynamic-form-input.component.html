@@ -1,4 +1,4 @@
-<section [formGroup]="form">
+<div [formGroup]="form" class="form-field">
   <label [for]="field.key">{{ field.label }}</label>
 
   <ng-container [ngSwitch]="field.controlType">
@@ -16,4 +16,4 @@
       [formControlName]="field.key" />
   </ng-container>
 
-</section>
+</div>
