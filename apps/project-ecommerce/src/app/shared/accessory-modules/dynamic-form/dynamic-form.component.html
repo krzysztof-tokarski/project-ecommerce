@@ -1,5 +1,5 @@
 <form [formGroup]="form">
-  <section *ngFor="let field of formFields" class="form-row">
+  <ng-container *ngFor="let field of formFields">
     <ecommerce-dynamic-form-input [field]="field" [form]="form"></ecommerce-dynamic-form-input>
-  </section>
+  </ng-container>
 </form>

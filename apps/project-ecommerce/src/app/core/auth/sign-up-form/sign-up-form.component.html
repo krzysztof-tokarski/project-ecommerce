@@ -1,6 +1,17 @@
-<ecommerce-logo></ecommerce-logo>
-<h2>Sign Up Form</h2>
-<div class="form-controls-container">
-  <ecommerce-dynamic-form [form]="signUpForm" [formFields]="formFields">
-  </ecommerce-dynamic-form>
-</div>
+<header>
+  <ecommerce-logo [sizeInPixels]="35"></ecommerce-logo>
+</header>
+<main>
+  <mat-card>
+    <h2 class="form-header">Sign Up Form</h2>
+    <div class="form-container">
+      <div>
+        <ecommerce-dynamic-form [form]="signUpForm" [formFields]="formFields">
+        </ecommerce-dynamic-form>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" (click)="submitForm()">Sign Up</button>
+      </div>
+    </div>
+  </mat-card>
+</main>

@@ -12,6 +12,11 @@
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
+  "styles": [
+    "/node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+    "/distnode_modules/primeng/resources/primeng.min.css",
+    "/node_modules/primeicons/primeicons.css"
+  ],
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",

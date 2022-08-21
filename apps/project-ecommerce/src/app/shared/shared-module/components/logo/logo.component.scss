@@ -1,8 +1,12 @@
 @use 'apps/project-ecommerce/src/styles/variables' as *;
 
-.logo {
-  color: $accent-color;
+.logo a{
+  color: $primary-color;
   text-transform: uppercase;
   font-family: fantasy;
   font-style: italic;
+  user-select: none;
+  text-decoration: none;
+  font-size: inherit;
 }
+

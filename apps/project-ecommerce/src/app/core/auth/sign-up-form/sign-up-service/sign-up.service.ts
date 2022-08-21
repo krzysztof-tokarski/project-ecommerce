@@ -42,6 +42,10 @@ export class SignUpService extends DynamicFormService {
 
   public readonly form!: FormGroup<SignUpForm>;
 
+  public submitForm() {
+
+  }
+
   constructor() {
     super();
     super.initalizeForm();

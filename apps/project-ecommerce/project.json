@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/project-ecommerce",
         "index": "apps/project-ecommerce/src/index.html",
@@ -17,7 +19,9 @@
           "apps/project-ecommerce/src/favicon.ico",
           "apps/project-ecommerce/src/assets"
         ],
-        "styles": ["apps/project-ecommerce/src/styles/styles.scss"],
+        "styles": [
+          "apps/project-ecommerce/src/styles/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -85,7 +89,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/project-ecommerce"],
+      "outputs": [
+        "coverage/apps/project-ecommerce"
+      ],
       "options": {
         "jestConfig": "apps/project-ecommerce/jest.config.ts",
         "passWithNoTests": true
