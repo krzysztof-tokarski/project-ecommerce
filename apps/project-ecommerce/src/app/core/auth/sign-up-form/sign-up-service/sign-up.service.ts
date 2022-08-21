@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { DynamicFormService } from '@shared/accessory-modules/dynamic-form/dynamic-form.abstract.service';
 import { FormInput } from '@shared/accessory-modules/dynamic-form/models/form-input';
 import { FormInputBase } from '@shared/accessory-modules/dynamic-form/models/form-input-base.class';
+import { CustomValidators } from '@shared/validation/custom-validators.class';
 import { SignUpForm } from './sign-up-form.interface';
 
 @Injectable()
@@ -34,7 +35,7 @@ export class SignUpService extends DynamicFormService {
     }),
     new FormInput({
       label: 'Confirm password',
-      key: 'confirm-password',
+      key: 'confirmPassword',
       type: 'password',
       required: true,
     }),
@@ -42,12 +43,13 @@ export class SignUpService extends DynamicFormService {
 
   public readonly form!: FormGroup<SignUpForm>;
 
-  public submitForm() {
-
-  }
-
   constructor() {
     super();
     super.initalizeForm();
+    this.form.setValidators(CustomValidators.passwordMatch);
+  }
+
+  public submitForm() {
+
   }
 }
