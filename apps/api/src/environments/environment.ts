@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  dbConnectionString: process.env.CONNECTION_STRING,
+  DB_CONNECTION_STRING: process.env.CONNECTION_STRING,
 };

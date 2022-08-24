@@ -7,6 +7,6 @@ import { DynamicFormInputComponent } from './components/dynamic-form-input/dynam
 @NgModule({
   declarations: [DynamicFormComponent, DynamicFormInputComponent],
   imports: [CommonModule, ReactiveFormsModule],
-  exports: [DynamicFormComponent]
+  exports: [DynamicFormComponent],
 })
-export class DynamicFormModule { }
+export class DynamicFormModule {}

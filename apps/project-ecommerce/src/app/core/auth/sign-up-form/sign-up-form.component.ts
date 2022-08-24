@@ -5,7 +5,7 @@ import { SignUpService } from './sign-up-service/sign-up.service';
   selector: 'ecommerce-sign-up-form',
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss'],
-  providers: [SignUpService]
+  providers: [SignUpService],
 })
 export class SignUpFormComponent {
   protected signUpForm = this.signUpService.form;
@@ -13,7 +13,7 @@ export class SignUpFormComponent {
 
   constructor(private signUpService: SignUpService) { }
 
-  protected submitForm() {
-    this.signUpService.submitForm();
+  protected submitSignUpForm() {
+    this.signUpService.submitSignUpForm();
   }
 }

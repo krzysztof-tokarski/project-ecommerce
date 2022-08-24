@@ -1,15 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { Message } from '@fullstack-node-portfolio-app/api-interfaces';
+// import { Message } from '@fullstack-node-portfolio-app/api-interfaces';
 
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
-  @Get('hello')
-  getData(): Message {
-    return this.appService.getData();
+  @Get()
+  getData() {
+    return console.log('app-controller')
   }
 }

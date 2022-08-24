@@ -1,6 +1,6 @@
 @use 'apps/project-ecommerce/src/styles/variables' as *;
 
-.logo a{
+.logo a {
   color: $primary-color;
   text-transform: uppercase;
   font-family: fantasy;
@@ -10,4 +10,3 @@
   font-size: inherit;
   text-align: center;
 }
-

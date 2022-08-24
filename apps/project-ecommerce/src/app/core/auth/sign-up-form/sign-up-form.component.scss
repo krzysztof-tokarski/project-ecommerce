@@ -1,6 +1,7 @@
 @use 'apps/project-ecommerce/src/styles/variables' as *;
 
-main,header {
+main,
+header {
   width: 100%;
 }
 
@@ -8,7 +9,9 @@ main,header {
   margin: 0;
 }
 
-main, header, .form-container {
+main,
+header,
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;

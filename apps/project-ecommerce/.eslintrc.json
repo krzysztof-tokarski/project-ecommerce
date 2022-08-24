@@ -9,6 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "linebreak-style": "off",
         "@angular-eslint/directive-selector": [
           "error",
           {

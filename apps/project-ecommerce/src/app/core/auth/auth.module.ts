@@ -6,6 +6,8 @@ import { SharedModule } from '@shared/shared-module/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormModule } from '@shared/accessory-modules/dynamic-form/dynamic-form.module';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
+import { BcryptService } from './bcrypt.service';
+import { AuthApiService } from './auth-api.service';
 
 @NgModule({
   declarations: [SignUpFormComponent, SignInFormComponent],
@@ -35,5 +37,6 @@ import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
       },
     ]),
   ],
+  providers: [BcryptService, AuthApiService],
 })
-export class AuthModule { }
+export class AuthModule {}

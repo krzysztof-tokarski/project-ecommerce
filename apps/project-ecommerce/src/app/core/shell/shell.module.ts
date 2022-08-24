@@ -7,16 +7,19 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ShellComponent, HeaderComponent, FooterComponent],
-  imports: [CommonModule, RouterModule.forChild([
-    {
-      path: '',
-      component: ShellComponent,
-    },
-    {
-      path: '**',
-      redirectTo: '',
-    },
-  ])],
-  exports: [ShellComponent]
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: ShellComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '',
+      },
+    ]),
+  ],
+  exports: [ShellComponent],
 })
-export class ShellModule { }
+export class ShellModule {}

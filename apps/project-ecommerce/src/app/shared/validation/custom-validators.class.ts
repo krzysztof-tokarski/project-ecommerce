@@ -1,5 +1,5 @@
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { SignUpForm } from '@core/auth/sign-up-form/sign-up-service/sign-up-form.interface';
+import { SignUpForm } from '@core/auth/sign-up-form/models/sign-up-form.interface';
 
 export class CustomValidators {
   public static passwordMatch(control: AbstractControl) {
@@ -7,6 +7,8 @@ export class CustomValidators {
     const password = group.controls.password.value;
     const passwordConfirmation = group.controls.confirmPassword.value;
 
-    return password === passwordConfirmation ? null : { passwordsDontMatch: true }
+    return password === passwordConfirmation
+      ? null
+      : { passwordsDontMatch: true };
   }
 }

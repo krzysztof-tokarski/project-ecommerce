@@ -8,8 +8,11 @@ import { environment } from '../environments/environment';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(environment.dbConnectionString), UsersModule],
+  imports: [
+    MongooseModule.forRoot(environment.DB_CONNECTION_STRING),
+    UsersModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,7 +1,7 @@
 import { ValidatorFn } from '@angular/forms';
 
 export interface FormInputBaseOptions<T> {
-  value?: T,
+  value?: T;
   key?: string;
   label?: string;
   required?: boolean;
