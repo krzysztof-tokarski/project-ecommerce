@@ -1,55 +1,38 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { BcryptService } from '@core/auth/bcrypt.service';
 import { DynamicFormService } from '@shared/accessory-modules/dynamic-form/dynamic-form.abstract.service';
-import { FormInput } from '@shared/accessory-modules/dynamic-form/models/form-input';
 import { FormInputBase } from '@shared/accessory-modules/dynamic-form/models/form-input-base.class';
 import { CustomValidators } from '@shared/validation/custom-validators.class';
-import { SignUpForm } from './sign-up-form.interface';
+import { signUpformFields } from '../models/sign-up-form-fields';
+import { SignUpForm } from '../models/sign-up-form.interface';
+import { CreateUserDto } from '@project-ecommerce/user-models';
+import { AuthApiService } from '@core/auth/auth-api.service';
 
 @Injectable()
 export class SignUpService extends DynamicFormService {
-  public readonly formFields: FormInputBase<string | boolean>[] = [
-    new FormInput({
-      label: 'First name',
-      key: 'firstName',
-      type: 'text',
-      required: true,
-    }),
-    new FormInput({
-      label: 'Last name',
-      key: 'lastName',
-      type: 'text',
-      required: true,
-    }),
-    new FormInput({
-      label: 'Email',
-      key: 'email',
-      type: 'text',
-      required: true,
-    }),
-    new FormInput({
-      label: 'Password',
-      key: 'password',
-      type: 'password',
-      required: true,
-    }),
-    new FormInput({
-      label: 'Confirm password',
-      key: 'confirmPassword',
-      type: 'password',
-      required: true,
-    }),
-  ];
+  public readonly formFields: FormInputBase<string | boolean>[] = signUpformFields;
 
   public readonly form!: FormGroup<SignUpForm>;
 
-  constructor() {
+  constructor(private bcryptService: BcryptService, private authApiService: AuthApiService) {
     super();
-    super.initalizeForm();
+    super.initializeForm();
     this.form.setValidators(CustomValidators.passwordMatch);
   }
 
-  public submitForm() {
+  public submitSignUpForm() {
+    const newUserData = this.createUserDto();
 
+    this.authApiService.postNewUserData(newUserData);
+  }
+
+  private createUserDto(): CreateUserDto {
+    const { password, firstName, lastName, email } = this.form.controls;
+    const { salt, hashedPassword } = this.bcryptService.hashPassword(password.value);
+
+    const newUserData: CreateUserDto = { firstName: firstName.value, lastName: lastName.value, email: email.value, salt, hashedPassword }
+
+    return newUserData;
   }
 }

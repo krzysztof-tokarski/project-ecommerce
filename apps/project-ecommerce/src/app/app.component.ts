@@ -7,16 +7,15 @@ import { NavigationLink } from '@core/shell/navigation/models/navigation-link.in
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   protected navigationLinks: NavigationLink[] = [
     {
       label: 'App',
-      url: '/app'
+      url: '/app',
     },
     {
       label: 'Auth',
-      url: '/auth'
-    }
-  ]
+      url: '/auth',
+    },
+  ];
   // TODO move to header
 }

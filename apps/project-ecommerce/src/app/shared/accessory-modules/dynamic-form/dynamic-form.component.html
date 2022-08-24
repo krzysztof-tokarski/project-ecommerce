@@ -1,5 +1,8 @@
 <form [formGroup]="form">
   <ng-container *ngFor="let field of formFields">
-    <ecommerce-dynamic-form-input [field]="field" [form]="form"></ecommerce-dynamic-form-input>
+    <ecommerce-dynamic-form-input
+      [field]="field"
+      [form]="form"
+    ></ecommerce-dynamic-form-input>
   </ng-container>
 </form>

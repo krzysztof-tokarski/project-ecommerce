@@ -9,13 +9,11 @@ export class FormInputBase<T> implements FormInputBaseOptions<T> {
   public order: number;
   public controlType: string;
   public type: string;
-  public options: { key: string; value: string; }[];
+  public options: { key: string; value: string }[];
   public validators: ValidatorFn[] | null;
   public readonly: boolean;
 
-  constructor(
-    options: FormInputBaseOptions<T>
-  ) {
+  constructor(options: FormInputBaseOptions<T>) {
     this.value = options.value;
     this.key = options.key || '';
     this.label = options.label || '';

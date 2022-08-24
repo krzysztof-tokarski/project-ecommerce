@@ -9,6 +9,7 @@
     {
       "files": ["src/plugins/index.js"],
       "rules": {
+        "linebreak-style": "off",
         "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off"
       }
