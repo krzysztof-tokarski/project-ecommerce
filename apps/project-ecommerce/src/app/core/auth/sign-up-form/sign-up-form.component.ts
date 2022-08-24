@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DynamicFormWrapper } from '@shared/accessory-modules/dynamic-form/dynamic-form-wrapper.abstract';
 import { SignUpService } from './sign-up-service/sign-up.service';
 
 @Component({
@@ -7,11 +8,13 @@ import { SignUpService } from './sign-up-service/sign-up.service';
   styleUrls: ['./sign-up-form.component.scss'],
   providers: [SignUpService],
 })
-export class SignUpFormComponent {
-  protected signUpForm = this.signUpService.form;
+export class SignUpFormComponent extends DynamicFormWrapper {
+  protected form = this.signUpService.form;
   protected formFields = this.signUpService.formFields;
 
-  constructor(private signUpService: SignUpService) { }
+  constructor(private signUpService: SignUpService) {
+    super();
+  }
 
   protected submitSignUpForm() {
     this.signUpService.submitSignUpForm();

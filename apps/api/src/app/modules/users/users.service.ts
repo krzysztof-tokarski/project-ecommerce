@@ -5,14 +5,14 @@ import { CreateUserDto, User } from '@project-ecommerce/user-models';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel(User.name) private userModel: Model<User>) { }
+  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
   async create(newUserData: CreateUserDto): Promise<User> {
     const createdUser = new this.userModel(newUserData);
     return createdUser.save();
   }
 
-  async findAll(): Promise<User[]> {
-    return this.userModel.find().exec();
+  async findOne(email: string): Promise<User> {
+    return this.userModel.findOne({ email }).exec();
   }
 }
