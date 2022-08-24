@@ -10,7 +10,8 @@
     "build": "nx build",
     "test": "nx test",
     "setenv": "node ./set-env.js",
-    "devstart": "concurrently \"npm run start\" \"npm run api\"",
+    "prettierwatch": "npx onchange \"**/*\" -- npx prettier --write --ignore-unknown {{changed}}",
+    "devstart": "concurrently \"npm run prettierwatch\" \"npm run start\" \"npm run api\"",
     "prepare": "husky install"
   },
   "private": true,
@@ -25,6 +26,7 @@
     "@angular/platform-browser": "~14.1.1",
     "@angular/platform-browser-dynamic": "~14.1.1",
     "@angular/router": "~14.1.1",
+    "@material/elevation": "^14.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/mongoose": "^9.2.0",
