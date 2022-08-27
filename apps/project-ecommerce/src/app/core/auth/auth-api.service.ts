@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CreateUserDto, SignInUserDto } from '@project-ecommerce/user-models';
 import { environment } from 'apps/project-ecommerce/src/environments/environment';
+import { tap } from 'rxjs';
+import { AuthSuccessResponse } from './sign-in-form/models/auth-success-response.model';
 
 @Injectable()
 export class AuthApiService {
@@ -15,6 +17,20 @@ export class AuthApiService {
   }
 
   public postSignInUserData(signInUserData: SignInUserDto) {
-    this.httpClient.post(this.LOGIN_ENDPOINT, signInUserData).subscribe();
+    this.httpClient
+      .post<AuthSuccessResponse>(this.LOGIN_ENDPOINT, signInUserData)
+      .pipe(
+        tap({
+          error: (error) => console.log('AuthApiServiceError:', error),
+          // TODO better error handling
+          next: (response) => {
+            const { user, accessToken } = response;
+            sessionStorage.setItem('user', JSON.stringify(user)),
+              sessionStorage.setItem('token', accessToken);
+            // TODO better security
+          },
+        })
+      )
+      .subscribe();
   }
 }

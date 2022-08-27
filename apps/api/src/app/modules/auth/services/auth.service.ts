@@ -1,6 +1,6 @@
-import { Body, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { SignInUserDto, User } from '@project-ecommerce/user-models';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { User, UserSnippetDto } from '@project-ecommerce/user-models';
 import { BcryptService } from './bcrypt.service';
 import { UsersService } from './users.service';
 
@@ -24,9 +24,18 @@ export class AuthService {
   }
 
   async login(user: User) {
-    const payload = { email: user.email, sub: user._id.toString() };
+    const { firstName, lastName, _id, email } = user;
+    const userSnippet: UserSnippetDto = {
+      email,
+      firstName,
+      lastName,
+      id: _id.toString(),
+    };
     return {
-      access_token: this.jwtService.sign(payload),
+      // TODO better token security?
+      // TODO research re sign method
+      user: userSnippet,
+      accessToken: this.jwtService.sign({}),
     };
   }
 }

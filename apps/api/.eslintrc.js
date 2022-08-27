@@ -25,5 +25,6 @@ module.exports = {
     'import/extensions': 'off',
     'consistent-return': 'off',
     'no-underscore-dangle': 'off',
+    'object-curly-newline': 'off',
   },
 };
