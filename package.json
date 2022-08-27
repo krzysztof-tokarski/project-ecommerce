@@ -10,8 +10,7 @@
     "build": "nx build",
     "test": "nx test",
     "setenv": "node ./set-env.js",
-    "prettierwatch": "npx onchange \"**/*\" -- npx prettier --write --ignore-unknown {{changed}}",
-    "devstart": "concurrently \"npm run prettierwatch\" \"npm run start\" \"npm run api\"",
+    "devstart": "concurrently \"npm run start\" \"npm run api\"",
     "prepare": "husky install"
   },
   "private": true,
@@ -119,7 +118,7 @@
     "npm-run-all": "^4.1.5",
     "nx": "14.5.6",
     "postcss": "^8.4.5",
-    "prettier": "2.7.1",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.0.2",
     "ts-jest": "27.1.4",
     "ts-node": "10.9.1",

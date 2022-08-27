@@ -14,7 +14,7 @@ export class UsersService {
     return createdUser.save();
   }
 
-  public async findOne(username: string, projectionProperties?: UserProperty[]): Promise<User> {
-    return this.UserModel.findOne({ username }, projectionProperties?.join(' ')).exec();
+  public async findOne(email: string, projectionProperties?: UserProperty[]): Promise<User> {
+    return this.UserModel.findOne({ email }, projectionProperties?.join(' ')).exec();
   }
 }

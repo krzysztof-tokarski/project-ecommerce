@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 
 @Schema()
 export class User {
+  _id?: string;
+
   @Prop()
   firstName: string;
 
