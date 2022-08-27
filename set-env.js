@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable indent */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 const dotenv = require('dotenv');
@@ -10,26 +12,37 @@ fs.readFile('.env', (err) => {
 
   dotenv.config();
 
-  const content = `
+  const appContent = `
 export const environment = {
   API_URL: "${process.env.API_URL}",
   production: "${process.env.production}"
+};`;
+
+  fs.writeFile(
+    './apps/project-ecommerce/src/environments/environment.ts',
+    appContent,
+    (err) => {
+      if (err) {
+        console.log(err);
+      }
+    }
+  );
+
+  const apiContent = `
+export const environment = {
+  DB_CONNECTION_STRING: '${process.env.CONNECTION_STRING}',
+  production: '${process.env.production}',
+  JWT_SECRET: '${process.env.JWT_SECRET}'
 };
 `;
 
   fs.writeFile(
-    './apps/project-ecommerce/src/environments/environment.ts',
-    content,
+    './apps/api/src/environments/environment.ts',
+    apiContent,
     (err) => {
       if (err) {
         console.log(err);
-        return;
       }
-
-      console.log('** environment.ts added');
-      console.log('** file connent:');
-      console.log(content);
-      console.log('** file end:');
     }
   );
 });

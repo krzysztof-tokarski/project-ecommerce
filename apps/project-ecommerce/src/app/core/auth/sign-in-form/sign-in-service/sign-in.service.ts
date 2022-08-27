@@ -14,10 +14,7 @@ export class SignInService extends DynamicFormService {
     signInFormFields;
   public readonly form!: FormGroup<SignInForm>;
 
-  constructor(
-    private bcryptService: BcryptService,
-    private authApiService: AuthApiService
-  ) {
+  constructor(private authApiService: AuthApiService) {
     super();
     super.initializeForm();
   }
@@ -25,7 +22,7 @@ export class SignInService extends DynamicFormService {
   public submitSignInForm() {
     const { email, password } = this.form.controls;
     const loginData: SignInUserDto = {
-      email: email.value,
+      username: email.value,
       password: password.value,
     };
 

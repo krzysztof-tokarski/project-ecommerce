@@ -6,7 +6,7 @@ function getClientEnvironment(configuration) {
   const NX_APP = /^NX_/i;
 
   const raw = Object.keys(process.env)
-    .filter((key) => NX_APP.test(key))
+    .filter(key => NX_APP.test(key))
     .reduce(
       (env, key) => {
         env[key] = process.env[key];
@@ -14,7 +14,7 @@ function getClientEnvironment(configuration) {
       },
       {
         NODE_ENV: process.env.NODE_ENV || configuration,
-      }
+      },
     );
 
   // Stringify all values so we can feed into webpack DefinePlugin
@@ -43,15 +43,13 @@ module.exports = function override(config, env) {
     new webpack.ProvidePlugin({
       process: 'process/browser',
       Buffer: ['buffer', 'Buffer'],
-    })
+    }),
   );
 
   return config;
 };
 
 module.exports = (config, options, context) => {
-  config.plugins.push(
-    new webpack.DefinePlugin(getClientEnvironment(context.configuration))
-  );
+  config.plugins.push(new webpack.DefinePlugin(getClientEnvironment(context.configuration)));
   return config;
 };
