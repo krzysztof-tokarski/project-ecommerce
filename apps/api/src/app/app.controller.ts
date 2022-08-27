@@ -1,7 +1,4 @@
 import { Controller, Get } from '@nestjs/common';
-
-// import { Message } from '@fullstack-node-portfolio-app/api-interfaces';
-
 import { AppService } from './app.service';
 
 @Controller()
