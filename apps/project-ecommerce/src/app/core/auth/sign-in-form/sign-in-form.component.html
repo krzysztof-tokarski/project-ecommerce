@@ -1,1 +1,25 @@
-<p>sign-in-form works!</p>
+<header>
+  <ecommerce-logo [sizeInPixels]="35"></ecommerce-logo>
+</header>
+<main>
+  <mat-card class="form-card mat-elevation-z5">
+    <h2 class="form-header">Sign In Form</h2>
+    <div class="form-container">
+      <div>
+        <ecommerce-dynamic-form [form]="form" [formFields]="formFields">
+        </ecommerce-dynamic-form>
+      </div>
+      <div>
+        <button
+          class="submit-button"
+          [disabled]="form.invalid"
+          mat-raised-button
+          color="primary"
+          (click)="submitSignInForm()"
+        >
+          Sign In
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</main>

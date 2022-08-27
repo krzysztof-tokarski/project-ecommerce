@@ -40,3 +40,6 @@ Thumbs.db
 
 .angular
 .env
+apps/project-ecommerce/src/environments/*
+apps/api/src/environments/*
+

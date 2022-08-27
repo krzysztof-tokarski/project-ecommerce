@@ -1,15 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '@project-ecommerce/user-models';
+import { CreateUserDto, SignInUserDto } from '@project-ecommerce/user-models';
 import { environment } from 'apps/project-ecommerce/src/environments/environment';
 
 @Injectable()
 export class AuthApiService {
-  constructor(private httpClient: HttpClient) { }
+  private USERS_ENDPOINT = new URL(`${environment.API_URL}/users`).toString();
+  private LOGIN_ENDPOINT = new URL(`${environment.API_URL}/login`).toString();
 
-  public postNewUserData(newUser: User) {
-    const USERS_ENDPOINT = new URL(`${environment.API_URL}/users`).toString();
+  constructor(private httpClient: HttpClient) {}
 
-    this.httpClient.post(USERS_ENDPOINT, newUser).subscribe();
+  public postNewUserData(newUserData: CreateUserDto) {
+    this.httpClient.post(this.USERS_ENDPOINT, newUserData).subscribe();
+  }
+
+  public postSignInUserData(signInUserData: SignInUserDto) {
+    this.httpClient.post(this.LOGIN_ENDPOINT, signInUserData).subscribe();
   }
 }

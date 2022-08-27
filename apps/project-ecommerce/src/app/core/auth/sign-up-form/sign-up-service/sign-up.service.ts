@@ -11,11 +11,14 @@ import { AuthApiService } from '@core/auth/auth-api.service';
 
 @Injectable()
 export class SignUpService extends DynamicFormService {
-  public readonly formFields: FormInputBase<string | boolean>[] = signUpformFields;
-
+  public readonly formFields: FormInputBase<string | boolean>[] =
+    signUpformFields;
   public readonly form!: FormGroup<SignUpForm>;
 
-  constructor(private bcryptService: BcryptService, private authApiService: AuthApiService) {
+  constructor(
+    private bcryptService: BcryptService,
+    private authApiService: AuthApiService
+  ) {
     super();
     super.initializeForm();
     this.form.setValidators(CustomValidators.passwordMatch);
@@ -29,9 +32,17 @@ export class SignUpService extends DynamicFormService {
 
   private createUserDto(): CreateUserDto {
     const { password, firstName, lastName, email } = this.form.controls;
-    const { salt, hashedPassword } = this.bcryptService.hashPassword(password.value);
+    const { salt, hashedPassword } = this.bcryptService.hashPassword(
+      password.value
+    );
 
-    const newUserData: CreateUserDto = { firstName: firstName.value, lastName: lastName.value, email: email.value, salt, hashedPassword }
+    const newUserData: CreateUserDto = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      salt,
+      hashedPassword,
+    };
 
     return newUserData;
   }
