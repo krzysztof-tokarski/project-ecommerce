@@ -10,16 +10,13 @@
         </ecommerce-dynamic-form>
       </div>
       <div>
-        <button
-          class="submit-button"
-          [disabled]="form.invalid"
-          mat-raised-button
-          color="primary"
-          (click)="submitSignInForm()"
-        >
+        <button class="submit-button" [disabled]="form.invalid" mat-raised-button color="primary"
+          (click)="submitSignInForm()">
           Sign In
         </button>
       </div>
     </div>
+    <button (click)="profile()">profile</button>
+
   </mat-card>
 </main>

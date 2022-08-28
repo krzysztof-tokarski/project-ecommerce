@@ -3,16 +3,18 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateUserDto, User } from '@project-ecommerce/user-models';
 
+type UserProperty = keyof User;
+
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel(User.name) private userModel: Model<User>) { }
+  constructor(@InjectModel(User.name) private UserModel: Model<User>) {}
 
-  async create(newUserData: CreateUserDto): Promise<User> {
-    const createdUser = new this.userModel(newUserData);
+  public async create(newUserData: CreateUserDto): Promise<User> {
+    const createdUser = new this.UserModel(newUserData);
     return createdUser.save();
   }
 
-  async findAll(): Promise<User[]> {
-    return this.userModel.find().exec();
+  public async findOne(email: string, projectionProperties?: UserProperty[]) {
+    return (await this.UserModel.findOne({ email }, projectionProperties?.join(' ')).exec()).toJSON();
   }
 }

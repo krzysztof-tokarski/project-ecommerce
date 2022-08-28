@@ -25,8 +25,11 @@ export class AuthApiService {
           // TODO better error handling
           next: (response) => {
             const { user, accessToken } = response;
-            sessionStorage.setItem('user', JSON.stringify(user)),
+
+            if (user && accessToken) {
+              sessionStorage.setItem('user', JSON.stringify(user));
               sessionStorage.setItem('token', accessToken);
+            }
             // TODO better security
           },
         })

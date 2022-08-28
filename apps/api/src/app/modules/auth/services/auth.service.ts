@@ -1,15 +1,29 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { User, UserSnippetDto } from '@project-ecommerce/user-models';
+import { ObjectId } from 'mongoose';
+import { UsersService } from '../../users/users.service';
+import { JwtSignPayload } from '../models/jwt-sign-payload.model';
 import { BcryptService } from './bcrypt.service';
-import { UsersService } from './users.service';
+
+type UserWithoutAuthData = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  _id: ObjectId;
+};
+
+type LoginResponse = {
+  user: UserSnippetDto;
+  accessToken: string;
+};
 
 @Injectable()
 export class AuthService {
   constructor(private usersService: UsersService, private bcryptService: BcryptService, private jwtService: JwtService) {}
 
   public async validateUser(email: string, password: string) {
-    const foundUser = await this.usersService.findOne(email);
+    const foundUser = await this.usersService.findOne(email, ['_id', 'email', 'firstName', 'lastName', 'hashedPassword']);
 
     if (!foundUser) {
       throw new NotFoundException('Did not find user with this email.');
@@ -20,10 +34,12 @@ export class AuthService {
       throw new UnauthorizedException('The provided password was incorrect.');
     }
 
-    return foundUser;
+    const { hashedPassword, salt, ...strippedUser } = foundUser;
+
+    return strippedUser;
   }
 
-  async login(user: User) {
+  async login(user: UserWithoutAuthData): Promise<LoginResponse> {
     const { firstName, lastName, _id, email } = user;
     const userSnippet: UserSnippetDto = {
       email,
@@ -31,11 +47,15 @@ export class AuthService {
       lastName,
       id: _id.toString(),
     };
-    return {
-      // TODO better token security?
-      // TODO research re sign method
+
+    const jwtSignPayload: JwtSignPayload = {
+      sub: userSnippet.id,
       user: userSnippet,
-      accessToken: this.jwtService.sign({}),
+    };
+
+    return {
+      user: userSnippet,
+      accessToken: this.jwtService.sign(jwtSignPayload),
     };
   }
 }
