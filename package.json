@@ -47,6 +47,7 @@
     "helmet": "^5.1.1",
     "https-browserify": "^1.0.0",
     "mongoose": "^6.5.2",
+    "ngx-toastr": "^15.0.0",
     "os-browserify": "^0.3.0",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",

@@ -5,6 +5,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtInterceptor } from './auth/jwt-interceptor/jwt.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpErrorInterceptor } from './feedback/http-error.interceptor';
 
 @NgModule({
   declarations: [],
@@ -14,15 +16,19 @@ import { JwtInterceptor } from './auth/jwt-interceptor/jwt.interceptor';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
-  exports: [BrowserModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    },
   ],
-  // TODO fix this export;
 })
 export class CoreModule {}
