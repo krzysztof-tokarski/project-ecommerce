@@ -8,10 +8,14 @@ import { DynamicFormModule } from '@shared/accessory-modules/dynamic-form/dynami
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { BcryptService } from './bcrypt.service';
 import { AuthApiService } from './auth-api.service';
-import { AuthWrapper } from './auth-component/auth-wrapper.component';
+import { AuthWrapperComponent } from './auth-component/auth-wrapper.component';
 
 @NgModule({
-  declarations: [SignUpFormComponent, SignInFormComponent, AuthWrapper],
+  declarations: [
+    SignUpFormComponent,
+    SignInFormComponent,
+    AuthWrapperComponent,
+  ],
   imports: [
     CommonModule,
     DynamicFormModule,
@@ -21,7 +25,7 @@ import { AuthWrapper } from './auth-component/auth-wrapper.component';
     RouterModule.forChild([
       {
         path: '',
-        component: AuthWrapper,
+        component: AuthWrapperComponent,
         children: [
           {
             path: 'sign-up',
