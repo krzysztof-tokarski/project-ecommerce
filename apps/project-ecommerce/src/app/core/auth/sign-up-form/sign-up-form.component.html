@@ -1,28 +1,14 @@
-<header>
-  <ecommerce-logo [sizeInPixels]="35"></ecommerce-logo>
-</header>
-<main>
-  <mat-card class="form-card mat-elevation-z5">
-    <h2 class="form-header">Sign Up Form</h2>
-    <div class="form-container">
-      <div>
-        <ecommerce-dynamic-form [form]="form" [formFields]="formFields">
-        </ecommerce-dynamic-form>
-      </div>
-      <div>
-        <button
-          class="submit-button"
-          [disabled]="form.invalid"
-          mat-raised-button
-          color="primary"
-          (click)="submitSignUpForm()"
-        >
-          Sign Up
-        </button>
-      </div>
-    </div>
-  </mat-card>
-  <span class="have-account"
-    >Already have an account? <a routerLink="../sign-in">Log in.</a></span
-  >
-</main>
+<h2 class="form-header">Sign Up Form</h2>
+<div class="form-container">
+  <div>
+    <ecommerce-dynamic-form [form]="form" [formFields]="formFields">
+    </ecommerce-dynamic-form>
+  </div>
+  <div>
+    <button class="submit-button" [disabled]="form.invalid" mat-raised-button color="primary"
+      (click)="submitSignUpForm()">
+      Sign Up
+    </button>
+  </div>
+  <span class="have-account">Already have an account? <a routerLink="../sign-in">Log in.</a></span>
+</div>
