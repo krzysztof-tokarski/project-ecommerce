@@ -1,8 +1,13 @@
-<ecommerce-logo [sizeInPixels]="20"></ecommerce-logo>
-<div style="flex: 2">
-  <ecommerce-top-searchbar></ecommerce-top-searchbar>
+<div id="top-row">
+  <ecommerce-logo [sizeInPixels]="20"></ecommerce-logo>
+  <div style="flex: 2">
+    <ecommerce-top-searchbar></ecommerce-top-searchbar>
+  </div>
+  <div>
+    <ecommerce-top-dropdown></ecommerce-top-dropdown>
+  </div>
+  <ecommerce-top-cart></ecommerce-top-cart>
 </div>
-<div>
-  <ecommerce-top-dropdown></ecommerce-top-dropdown>
+<div id="bottom-row">
+  <ecommerce-top-navbar></ecommerce-top-navbar>
 </div>
-<ecommerce-top-cart></ecommerce-top-cart>

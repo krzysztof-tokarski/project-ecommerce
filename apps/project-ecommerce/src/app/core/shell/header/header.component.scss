@@ -1,6 +1,17 @@
 :host {
-  padding: 10px 20px;
-  display: flex;
-  align-content: center;
-  gap: 3em;
+  width: 100%;
+
+  #top-row, #bottom-row {
+    display: flex;
+    align-content: center;
+    gap: 3em;
+  }
+
+  #top-row {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
+
+
