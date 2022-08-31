@@ -20,3 +20,9 @@ body {
     font-size: 0.75em;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  body {
+    min-width: 992px;
+  }
+}

@@ -1,6 +1,8 @@
-<!-- <nav class="navigation" *ngIf="navigationLinks">
-  <ng-container *ngFor="let link of navigationLinks">
-    <a class="link" [href]="link.url">{{link.label}}</a>
-  </ng-container>
-</nav> -->
-<p>header works!</p>
+<ecommerce-logo [sizeInPixels]="20"></ecommerce-logo>
+<div style="flex: 2">
+  <ecommerce-top-searchbar></ecommerce-top-searchbar>
+</div>
+<div>
+  <ecommerce-top-dropdown></ecommerce-top-dropdown>
+</div>
+<ecommerce-top-cart></ecommerce-top-cart>
