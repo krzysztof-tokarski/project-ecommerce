@@ -3,14 +3,21 @@
 
   #top-row, #bottom-row {
     display: flex;
-    align-content: center;
     gap: 3em;
+    text-align: center;
+    align-items: center;
   }
 
   #top-row {
     padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    background-color: gray;
+  }
+
+  #bottom-row {
+    background-color: darkgray;
   }
 }
 
