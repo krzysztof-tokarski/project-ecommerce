@@ -4,9 +4,10 @@ import { LogoComponent } from './components/logo/logo.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
 
 const MATERIAL_MODULES = [MatButtonModule, MatCardModule];
-const PRIMENG_MODULES = [InputTextModule];
+const PRIMENG_MODULES = [InputTextModule, MenubarModule];
 
 @NgModule({
   declarations: [LogoComponent],

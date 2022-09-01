@@ -16,5 +16,9 @@ export class TopNavbarComponent {
       label: 'Auth',
       url: '/auth',
     },
+    {
+      label: 'Site Management',
+      url: 'manage',
+    },
   ];
 }

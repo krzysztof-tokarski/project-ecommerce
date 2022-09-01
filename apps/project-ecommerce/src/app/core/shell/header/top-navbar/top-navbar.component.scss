@@ -1,11 +1,18 @@
+@use 'apps/project-ecommerce/src/styles/variables' as *;
+
 :host {
   width: 100%;
   padding: 10px;
 
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
   a {
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
+    color: $white-off;
+    font-size: $nav-link-font-size;
+    font-weight: $nav-link-font-weight;
   }
 }
 

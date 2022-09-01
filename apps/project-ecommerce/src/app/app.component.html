@@ -1,1 +1,7 @@
+<nav class="navigation" *ngIf="navigationLinks">
+  <ng-container *ngFor="let link of navigationLinks">
+    <a class="link" [routerLink]="link.url">{{ link.label }}</a>
+  </ng-container>
+</nav>
+<!-- TODO DELETE -->
 <router-outlet></router-outlet>

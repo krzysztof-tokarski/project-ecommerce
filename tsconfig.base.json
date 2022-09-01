@@ -23,7 +23,10 @@
       "@project-ecommerce/user-models": [
         "libs/api-interfaces/src/lib/user/index.ts"
       ],
-      "@shared/*": ["apps/project-ecommerce/src/app/shared/*"]
+      "@shared/*": ["apps/project-ecommerce/src/app/shared/*"],
+      "@site-management/*": [
+        "apps/project-ecommerce/src/app/features/site-management/*"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
