@@ -4,9 +4,10 @@ import { SharedModule } from '@shared/shared-module/shared.module';
 import { SiteManagementWrapperComponent } from './site-management-wrapper/site-management-wrapper.component';
 import { RouterModule } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
+import { CreateProductFormComponent } from './create-product-form/create-product-form.component';
 
 @NgModule({
-  declarations: [SiteManagementWrapperComponent],
+  declarations: [SiteManagementWrapperComponent, CreateProductFormComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -15,6 +16,12 @@ import { MenubarModule } from 'primeng/menubar';
       {
         path: '',
         component: SiteManagementWrapperComponent,
+        children: [
+          {
+            path: 'products/create',
+            component: CreateProductFormComponent,
+          },
+        ],
       },
       {
         path: '**',

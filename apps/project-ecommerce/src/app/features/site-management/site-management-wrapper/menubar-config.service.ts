@@ -5,15 +5,19 @@ import { MenuItem } from 'primeng/api';
 export class MenubarConfigService {
   public config: MenuItem[] = [
     {
-      label: 'File',
+      label: 'Products',
+      icon: 'pi pi-box',
       items: [
         {
           label: 'New',
           icon: 'pi pi-fw pi-plus',
-          items: [{ label: 'Project' }, { label: 'Other' }],
+          items: [
+            { label: 'Product', routerLink: './products/create' },
+            { label: 'Manufacturer' },
+          ],
         },
-        { label: 'Open' },
-        { label: 'Quit' },
+        // { label: 'Open' },
+        // { label: 'Quit' },
       ],
     },
     {

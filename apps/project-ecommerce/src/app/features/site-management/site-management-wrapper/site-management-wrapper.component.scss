@@ -1,4 +1,8 @@
-header {
-  width: 100%;
-  text-align: center;
+:host ::ng-deep .p-menubar{
+  min-width: 1000px;
+  display: flex;
+  gap: 1em;
 }
+
+// TODO responsive styles
+

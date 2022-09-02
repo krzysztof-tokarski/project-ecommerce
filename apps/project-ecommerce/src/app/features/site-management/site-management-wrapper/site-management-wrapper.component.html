@@ -1,1 +1,6 @@
-<p-menubar [model]="menuBarConfig"></p-menubar>
+<p-menubar [model]="menuBarConfig">
+  <ng-template pTemplate="start">
+    <b>SITE MANAGEMENT</b>
+  </ng-template>
+</p-menubar>
+<router-outlet></router-outlet>
