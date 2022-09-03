@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthApiService } from '@core/auth/auth-api.service';
 import { SignInUserDto } from '@project-ecommerce/user-models';
+import { FormInputBase } from '@shared/accessory-modules/dynamic-form/components/dynamic-form-input/models/form-input-base/form-input-base.class';
 import { DynamicFormService } from '@shared/accessory-modules/dynamic-form/dynamic-form.abstract.service';
-import { FormInputBase } from '@shared/accessory-modules/dynamic-form/models/form-input-base/form-input-base.class';
 import { signInFormFields } from '../config/sign-in-form-fields';
 import { SignInForm } from '../models/sign-in-form.interface';
 

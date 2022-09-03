@@ -2,6 +2,10 @@
 
 ::ng-deep .p-button {
   background-color: $primary-color;
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  letter-spacing: 2px;
 
   &:disabled {
     background-color: $secondary-color;

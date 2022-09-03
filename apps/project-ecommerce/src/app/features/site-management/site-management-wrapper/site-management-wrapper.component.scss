@@ -1,6 +1,6 @@
 @use 'apps/project-ecommerce/src/styles/variables' as *;
 
-:host ::ng-deep .p-menubar{
+::ng-deep .p-menubar{
   min-width: 1000px;
   width: 100%;
   display: flex;
@@ -12,5 +12,9 @@
   };
 }
 
-// TODO responsive styles
-
+main {
+  margin-top: 2em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

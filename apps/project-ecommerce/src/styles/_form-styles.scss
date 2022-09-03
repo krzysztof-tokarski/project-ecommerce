@@ -2,10 +2,14 @@
 @use './buttons' as *;
 
 ::ng-deep .p-card {
-  width: 400px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .p-card-body {
+    width: 100%;
+  }
 
   .form-header {
     text-transform: uppercase;
@@ -16,7 +20,7 @@
 
 main,
 header,
-.form-container {
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,10 +32,40 @@ header,
   }
 }
 
-.form-container {
+.main-container {
   width: 100%;
-  justify-items: center;
   gap: 1.5em;
+
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+
+}
+.submit-button {
+  margin-top: 20px;
+  text-transform: uppercase;
+  align-self: center;
+  justify-self: center;
+}
+
+.bottom-inner-html {
+  width: 100%;
+  text-align: center;
 }
 
 .have-account {
@@ -44,6 +78,38 @@ header,
   }
 }
 
-.submit-button {
-  text-transform: uppercase;
+::ng-deep .p-inputnumber{
+    width: 100%;
+}
+
+::ng-deep .p-password	  {
+    width: 100%;
+}
+
+::ng-deep .p-inputtext {
+  width: 100%;
+}
+
+::ng-deep .p-fileupload .p-fileupload-buttonbar		{
+  border: 1px dashed black;
+  background-color: inherit;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+
+  span, button {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    flex-shrink: 0;
+    width: fit-content;
+  }
+}
+
+::ng-deep .p-fileupload .p-fileupload-content {
+  padding: 0;
+
+}
+
+::ng-deep .p-fileupload-content .p-progressbar {
+  display: none;
 }

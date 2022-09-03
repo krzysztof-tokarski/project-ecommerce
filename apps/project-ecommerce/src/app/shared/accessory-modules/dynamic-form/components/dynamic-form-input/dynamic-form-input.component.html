@@ -2,8 +2,20 @@
   <label [for]="field.key">{{ field.label }}</label>
 
   <ng-container [ngSwitch]="field.controlType">
+
+    <ng-container *ngSwitchCase="'file'">
+      <p-fileUpload mode="advanced" [name]="field.key" [id]="field.key">
+        <!-- [formControlName]="field.key" -->
+      </p-fileUpload>
+    </ng-container>
+
     <ng-container *ngSwitchCase="'input'">
       <input pInputText [formControlName]="field.key" [id]="field.key" [type]="field.type" />
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'number'">
+      <p-inputNumber [formControlName]="field.key" [id]="field.key" mode="currency" currency="USD"
+        [minFractionDigits]="2" [maxFractionDigits]="2"></p-inputNumber>
     </ng-container>
 
     <ng-container *ngSwitchCase="'password'">
@@ -11,13 +23,21 @@
       </p-password>
     </ng-container>
 
-    <select *ngSwitchCase="'dropdown'" [id]="field.key" [formControlName]="field.key">
-      <option *ngFor="let opt of field.options" [value]="opt.key">
-        {{ opt.value }}
-      </option>
-    </select>
+    <ng-container *ngSwitchCase="'textarea'">
+      <textarea [formControlName]="field.key" [id]="field.key" [autoResize]="true" pInputTextarea></textarea>
+    </ng-container>
+    <!--
+    <ng-container *ngSwitchCase="'checkbox'">
+      <input type="checkbox" [id]="field.key" [name]="field.key" [formControlName]="field.key" />
+    </ng-container>
 
-    <input *ngSwitchCase="'checkbox'" type="checkbox" [id]="field.key" [name]="field.key"
-      [formControlName]="field.key" />
+    <ng-container *ngSwitchCase="'dropdown'">
+      <select [id]="field.key" [formControlName]="field.key">
+        <option *ngFor="let opt of field.options" [value]="opt.key">
+          {{ opt.value }}
+        </option>
+      </select>
+    </ng-container> -->
+
   </ng-container>
 </div>

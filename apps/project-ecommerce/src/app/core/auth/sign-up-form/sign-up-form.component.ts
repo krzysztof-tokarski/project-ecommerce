@@ -24,7 +24,7 @@ export class SignUpFormComponent extends DynamicFormWrapper {
     super();
   }
 
-  protected submitSignUpForm() {
+  private submitSignUpForm() {
     this.signUpService.submitSignUpForm();
   }
 }

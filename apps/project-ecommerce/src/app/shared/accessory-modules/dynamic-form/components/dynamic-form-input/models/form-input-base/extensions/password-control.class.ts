@@ -1,6 +1,6 @@
 import { ControlType } from '../../control-type.enum';
 import { FormInputBase } from '../form-input-base.class';
 
-export class FormPassword extends FormInputBase<string> {
-  public controlType = ControlType.INPUT_TEXT_PASSWORD;
+export class PasswordControl extends FormInputBase<string> {
+  public override controlType = ControlType.PASSWORD;
 }

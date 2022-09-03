@@ -14,7 +14,7 @@ export abstract class FormInputBase<T> implements FormInputBaseOptions<T> {
   public validators: ValidatorFn[] | null;
   public readonly: boolean;
   public feedback: boolean;
-  public abstract controlType: ControlType;
+  public controlType: ControlType;
 
   constructor(options: FormInputBaseOptions<T>) {
     this.value = options.value;
@@ -22,11 +22,11 @@ export abstract class FormInputBase<T> implements FormInputBaseOptions<T> {
     this.label = options.label || '';
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
-    // this.controlType = options.controlType || ControlType.INPUT_TEXT;
     this.type = options.type || InputType.TEXT;
     this.options = options.options || [];
     this.validators = options.validators || [];
     this.readonly = !!options.readonly;
     this.feedback = !!options.feedback;
+    this.controlType = options.controlType || ControlType.TEXT_INPUT;
   }
 }

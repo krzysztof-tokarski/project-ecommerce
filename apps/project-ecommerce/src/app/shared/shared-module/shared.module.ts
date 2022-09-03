@@ -6,14 +6,21 @@ import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { PasswordModule } from 'primeng/password';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FileUploadModule } from 'primeng/fileupload';
 
 const PRIMENG_MODULES = [
+  InputTextareaModule,
   InputTextModule,
+  InputNumberModule,
+  FileUploadModule,
   PasswordModule,
   MenubarModule,
   ButtonModule,
   CardModule,
 ];
+// TODO transfer form-associated imports to sep module
 
 @NgModule({
   declarations: [LogoComponent],

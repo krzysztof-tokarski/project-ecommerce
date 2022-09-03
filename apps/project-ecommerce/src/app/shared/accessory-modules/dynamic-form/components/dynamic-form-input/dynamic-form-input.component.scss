@@ -1,9 +1,8 @@
-:host {
-  max-width: 300px;
-}
+@use 'apps/project-ecommerce/src/styles/form-styles';
 
-.form-field {
-  display: flex;
-  flex-direction: column;
+:host {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
 }

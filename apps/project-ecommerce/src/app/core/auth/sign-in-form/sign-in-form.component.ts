@@ -22,7 +22,7 @@ export class SignInFormComponent extends DynamicFormWrapper {
     super();
   }
 
-  protected submitSignInForm() {
+  private submitSignInForm() {
     this.signInService.submitSignInForm();
   }
 }
