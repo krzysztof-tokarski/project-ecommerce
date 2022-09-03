@@ -1,0 +1,5 @@
+@use 'apps/project-ecommerce/src/styles/variables' as *;
+
+:host {
+  color: $white-off;
+}

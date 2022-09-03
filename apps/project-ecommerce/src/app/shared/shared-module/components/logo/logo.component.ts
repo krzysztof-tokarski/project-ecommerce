@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class LogoComponent {
   @Input() public sizeInPixels!: number;
   @Input() public color!: string;
-  protected defaultColor = 'rgb(111, 67, 187)';
+  protected defaultColor = '#1E2024';
   // TODO ref to SASS variable?
 }

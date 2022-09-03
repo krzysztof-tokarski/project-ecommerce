@@ -1,3 +1,5 @@
+@use 'apps/project-ecommerce/src/styles/variables' as *;
+
 :host {
   width: 100%;
 
@@ -13,11 +15,11 @@
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: gray;
+    background-color: $primary-color;
   }
 
   #bottom-row {
-    background-color: darkgray;
+    background-color: $secondary-color;
   }
 }
 

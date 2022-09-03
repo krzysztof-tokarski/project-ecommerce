@@ -1,8 +1,10 @@
 @use './reset';
 @use './global';
 @use './typography';
+@use './form-styles';
+@use './buttons';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '~primeng/resources/themes/lara-light-blue/theme.css';
+@import '~primeng/resources/themes/rhea/theme.css';
 @import '~primeng/resources/primeng.min.css';
 @import '~primeicons/primeicons.css';
 @import '~ngx-toastr/toastr';
