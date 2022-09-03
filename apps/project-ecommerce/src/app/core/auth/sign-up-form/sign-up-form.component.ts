@@ -16,9 +16,9 @@ export class SignUpFormComponent extends DynamicFormWrapper {
   protected readonly formFields = this.signUpService.formFields;
   protected readonly submitButtonLabel = 'sign up';
   protected readonly formTitle = 'sign up form';
-  protected readonly submitAction = this.submitSignUpForm();
+  protected readonly submitAction = this.submitSignUpForm;
   protected override readonly bottomInnerHtml =
-    '<span class="have-account">Already have an account? <a routerLink="../sign-in">Log in.</a></span>';
+    '<span class="have-account">Already have an account? <a href="auth/sign-in">Log in.</a></span>';
 
   constructor(private signUpService: SignUpService) {
     super();

@@ -16,7 +16,7 @@ export class SignInFormComponent extends DynamicFormWrapper {
   protected readonly formFields = this.signInService.formFields;
   protected readonly submitButtonLabel = 'sign in';
   protected readonly formTitle = 'sign in form';
-  protected submitAction = this.submitSignInForm();
+  protected submitAction = this.submitSignInForm;
 
   constructor(private signInService: SignInService) {
     super();
