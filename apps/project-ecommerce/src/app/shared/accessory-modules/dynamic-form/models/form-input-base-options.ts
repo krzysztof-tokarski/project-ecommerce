@@ -1,4 +1,5 @@
 import { ValidatorFn } from '@angular/forms';
+import { ControlType } from './control-type.enum';
 
 export interface FormInputBaseOptions<T> {
   value?: T;
@@ -6,7 +7,7 @@ export interface FormInputBaseOptions<T> {
   label?: string;
   required?: boolean;
   order?: number;
-  controlType?: string;
+  controlType?: ControlType;
   type?: string;
   options?: { key: string; value: string }[];
   validators?: ValidatorFn[] | null;

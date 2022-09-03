@@ -1,4 +1,5 @@
 import { ValidatorFn } from '@angular/forms';
+import { ControlType } from './control-type.enum';
 import { FormInputBaseOptions } from './form-input-base-options';
 
 export class FormInputBase<T> implements FormInputBaseOptions<T> {
@@ -7,7 +8,7 @@ export class FormInputBase<T> implements FormInputBaseOptions<T> {
   public label: string;
   public required: boolean;
   public order: number;
-  public controlType: string;
+  public controlType: ControlType;
   public type: string;
   public options: { key: string; value: string }[];
   public validators: ValidatorFn[] | null;
@@ -19,7 +20,7 @@ export class FormInputBase<T> implements FormInputBaseOptions<T> {
     this.label = options.label || '';
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
-    this.controlType = options.controlType || '';
+    this.controlType = options.controlType || ControlType.INPUT_TEXT;
     this.type = options.type || '';
     this.options = options.options || [];
     this.validators = options.validators || [];
