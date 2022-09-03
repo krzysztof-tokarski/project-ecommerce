@@ -2,8 +2,13 @@
   <label [for]="field.key">{{ field.label }}</label>
 
   <ng-container [ngSwitch]="field.controlType">
-    <ng-container *ngSwitchCase="'inputText'">
+    <ng-container *ngSwitchCase="'input'">
       <input pInputText [formControlName]="field.key" [id]="field.key" [type]="field.type" />
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'password'">
+      <p-password [feedback]="field.feedback" [formControlName]="field.key" [id]="field.key" type="password">
+      </p-password>
     </ng-container>
 
     <select *ngSwitchCase="'dropdown'" [id]="field.key" [formControlName]="field.key">

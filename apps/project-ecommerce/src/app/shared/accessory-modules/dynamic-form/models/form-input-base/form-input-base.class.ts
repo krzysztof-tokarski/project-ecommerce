@@ -1,18 +1,20 @@
 import { ValidatorFn } from '@angular/forms';
-import { ControlType } from './control-type.enum';
-import { FormInputBaseOptions } from './form-input-base-options';
+import { ControlType } from '../control-type.enum';
+import { FormInputBaseOptions } from '../form-input-base-options';
+import { InputType } from '../input-type.enum';
 
-export class FormInputBase<T> implements FormInputBaseOptions<T> {
+export abstract class FormInputBase<T> implements FormInputBaseOptions<T> {
   public value: T | undefined;
   public key: string;
   public label: string;
   public required: boolean;
   public order: number;
-  public controlType: ControlType;
-  public type: string;
+  public type: InputType;
   public options: { key: string; value: string }[];
   public validators: ValidatorFn[] | null;
   public readonly: boolean;
+  public feedback: boolean;
+  public abstract controlType: ControlType;
 
   constructor(options: FormInputBaseOptions<T>) {
     this.value = options.value;
@@ -20,10 +22,11 @@ export class FormInputBase<T> implements FormInputBaseOptions<T> {
     this.label = options.label || '';
     this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
-    this.controlType = options.controlType || ControlType.INPUT_TEXT;
-    this.type = options.type || '';
+    // this.controlType = options.controlType || ControlType.INPUT_TEXT;
+    this.type = options.type || InputType.TEXT;
     this.options = options.options || [];
     this.validators = options.validators || [];
     this.readonly = !!options.readonly;
+    this.feedback = !!options.feedback;
   }
 }

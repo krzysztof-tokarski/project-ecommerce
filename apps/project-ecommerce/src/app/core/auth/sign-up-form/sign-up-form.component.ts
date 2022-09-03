@@ -9,8 +9,8 @@ import { SignUpService } from './sign-up-service/sign-up.service';
   providers: [SignUpService],
 })
 export class SignUpFormComponent extends DynamicFormWrapper {
-  protected form = this.signUpService.form;
-  protected formFields = this.signUpService.formFields;
+  protected readonly form = this.signUpService.form;
+  protected readonly formFields = this.signUpService.formFields;
 
   constructor(private signUpService: SignUpService) {
     super();

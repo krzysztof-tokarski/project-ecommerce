@@ -3,7 +3,7 @@ import { MenuItem } from 'primeng/api';
 
 @Injectable()
 export class MenubarConfigService {
-  public config: MenuItem[] = [
+  public readonly config: MenuItem[] = [
     {
       label: 'Products',
       icon: 'pi pi-box',

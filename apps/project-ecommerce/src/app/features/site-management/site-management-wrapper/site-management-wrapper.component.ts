@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MenubarConfigService } from './menubar-config.service';
+import { MenubarConfigService } from './config/menubar-config.service';
 
 @Component({
   selector: 'ecommerce-site-management-wrapper',
@@ -9,7 +9,7 @@ import { MenubarConfigService } from './menubar-config.service';
   providers: [MenubarConfigService],
 })
 export class SiteManagementWrapperComponent {
-  protected menuBarConfig!: MenuItem[];
+  protected readonly menuBarConfig!: MenuItem[];
 
   constructor(private menuBarConfigService: MenubarConfigService) {
     this.menuBarConfig = this.menuBarConfigService.config;

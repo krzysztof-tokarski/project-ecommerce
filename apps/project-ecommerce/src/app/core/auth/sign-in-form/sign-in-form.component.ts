@@ -9,8 +9,8 @@ import { SignInService } from './sign-in-service/sign-in.service';
   providers: [SignInService],
 })
 export class SignInFormComponent extends DynamicFormWrapper {
-  protected form = this.signInService.form;
-  protected formFields = this.signInService.formFields;
+  protected readonly form = this.signInService.form;
+  protected readonly formFields = this.signInService.formFields;
 
   constructor(private signInService: SignInService) {
     super();

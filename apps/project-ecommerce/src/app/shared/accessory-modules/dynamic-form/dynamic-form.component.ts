@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormInputBase } from './models/form-input-base.class';
+import { FormInputBase } from './models/form-input-base/form-input-base.class';
 
 @Component({
   selector: 'ecommerce-dynamic-form[formFields][form]',

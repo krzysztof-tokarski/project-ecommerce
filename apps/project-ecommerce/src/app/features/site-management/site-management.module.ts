@@ -4,7 +4,7 @@ import { SharedModule } from '@shared/shared-module/shared.module';
 import { SiteManagementWrapperComponent } from './site-management-wrapper/site-management-wrapper.component';
 import { RouterModule } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
-import { CreateProductFormComponent } from './create-product-form/create-product-form.component';
+import { CreateProductFormComponent } from './site-management-wrapper/create-product-form/create-product-form.component';
 
 @NgModule({
   declarations: [SiteManagementWrapperComponent, CreateProductFormComponent],

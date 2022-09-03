@@ -1,5 +1,5 @@
 import { FormGroup } from '@angular/forms';
-import { FormInputBase } from './models/form-input-base.class';
+import { FormInputBase } from './models/form-input-base/form-input-base.class';
 
 export abstract class DynamicFormWrapper {
   protected abstract form: FormGroup;
