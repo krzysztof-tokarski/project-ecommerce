@@ -9,6 +9,7 @@ import { PasswordModule } from 'primeng/password';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FileUploadModule } from 'primeng/fileupload';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 const PRIMENG_MODULES = [
   InputTextareaModule,
@@ -23,8 +24,8 @@ const PRIMENG_MODULES = [
 // TODO transfer form-associated imports to sep module
 
 @NgModule({
-  declarations: [LogoComponent],
+  declarations: [LogoComponent, FileUploadComponent],
   imports: [CommonModule, PRIMENG_MODULES],
-  exports: [LogoComponent, PRIMENG_MODULES],
+  exports: [LogoComponent, FileUploadComponent, PRIMENG_MODULES],
 })
 export class SharedModule {}

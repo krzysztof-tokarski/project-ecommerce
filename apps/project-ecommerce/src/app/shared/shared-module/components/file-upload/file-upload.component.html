@@ -1,0 +1,14 @@
+<p-fileUpload #fileUpload (onSelect)="addFiles($event)" (onRemove)="removeFiles()" [showUploadButton]="showUploadButton"
+  [showCancelButton]="showCancelButton" [accept]="acceptableFileTypes" [maxFileSize]="maxFileSize">
+  <!-- <ng-template let-file pTemplate="file">
+    <div>
+      <p>{{ file.name }}</p>
+      <p>{{ file.size}}</p>
+    </div>
+    <div>
+      <button (click)="fileUpload.clear()" type="button" class="btn--no-btn">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+  </ng-template> -->
+</p-fileUpload>

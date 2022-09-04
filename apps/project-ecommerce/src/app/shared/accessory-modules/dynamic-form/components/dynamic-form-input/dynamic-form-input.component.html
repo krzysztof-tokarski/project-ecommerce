@@ -4,13 +4,12 @@
   <ng-container [ngSwitch]="field.controlType">
 
     <ng-container *ngSwitchCase="'file'">
-      <p-fileUpload mode="advanced" [name]="field.key" [id]="field.key">
-        <!-- [formControlName]="field.key" -->
-      </p-fileUpload>
+      <ecommerce-file-upload [form]="form" [controlName]="field.key">
+      </ecommerce-file-upload>
     </ng-container>
 
     <ng-container *ngSwitchCase="'input'">
-      <input pInputText [formControlName]="field.key" [id]="field.key" [type]="field.type" />
+      <input [required]="false" pInputText [formControlName]="field.key" [id]="field.key" [type]="field.type" />
     </ng-container>
 
     <ng-container *ngSwitchCase="'number'">

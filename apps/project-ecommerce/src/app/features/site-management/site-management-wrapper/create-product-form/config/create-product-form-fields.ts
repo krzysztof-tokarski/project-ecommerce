@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 import { DefaultTextInputControl } from '@shared/accessory-modules/dynamic-form/components/dynamic-form-input/models/form-input-base/extensions/default-text-input-control.class';
 import { FileControl } from '@shared/accessory-modules/dynamic-form/components/dynamic-form-input/models/form-input-base/extensions/file-control.class';
 import { NumberControl } from '@shared/accessory-modules/dynamic-form/components/dynamic-form-input/models/form-input-base/extensions/number-control.class';
@@ -10,21 +11,25 @@ export const createProductFormFields: FormInputBase<string | boolean>[] = [
     label: 'Name',
     key: 'name',
     type: InputType.TEXT,
+    validators: [Validators.required],
     required: true,
   }),
   new TextareaControl({
     label: 'Description',
     key: 'description',
+    validators: [Validators.required],
     required: true,
   }),
   new NumberControl({
     label: 'Price',
     key: 'price',
+    validators: [Validators.required],
     required: true,
+    // TODO remove required field from model
   }),
   new FileControl({
     label: 'Product image',
     key: 'file',
-    required: true,
+    validators: [Validators.required],
   }),
 ];

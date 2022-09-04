@@ -1,9 +1,4 @@
-import {
-  AbstractControl,
-  FormControl,
-  Validators,
-  FormGroup,
-} from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { FormInputBase } from './components/dynamic-form-input/models/form-input-base/form-input-base.class';
 
 export abstract class DynamicFormService {
@@ -18,7 +13,6 @@ export abstract class DynamicFormService {
     this.formFields.forEach((field) => {
       group[field.key] = new FormControl(field.value || '', [
         ...(field.validators || []),
-        Validators.required,
       ]);
     });
 

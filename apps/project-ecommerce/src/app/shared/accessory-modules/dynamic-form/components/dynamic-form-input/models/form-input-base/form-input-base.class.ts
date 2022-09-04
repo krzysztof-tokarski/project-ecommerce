@@ -7,7 +7,6 @@ export abstract class FormInputBase<T> implements FormInputBaseOptions<T> {
   public value: T | undefined;
   public key: string;
   public label: string;
-  public required: boolean;
   public order: number;
   public type: InputType;
   public options: { key: string; value: string }[];
@@ -20,7 +19,6 @@ export abstract class FormInputBase<T> implements FormInputBaseOptions<T> {
     this.value = options.value;
     this.key = options.key || '';
     this.label = options.label || '';
-    this.required = !!options.required;
     this.order = options.order === undefined ? 1 : options.order;
     this.type = options.type || InputType.TEXT;
     this.options = options.options || [];
