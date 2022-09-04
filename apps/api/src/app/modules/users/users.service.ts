@@ -7,6 +7,7 @@ type UserProperty = keyof User;
 
 @Injectable()
 export class UsersService {
+  // TODO abstract service
   constructor(@InjectModel(User.name) private UserModel: Model<User>) {}
 
   public async create(newUserData: CreateUserDto): Promise<User> {

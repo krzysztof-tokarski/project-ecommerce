@@ -23,6 +23,9 @@
       "@project-ecommerce/user-models": [
         "libs/api-interfaces/src/lib/user/index.ts"
       ],
+      "@project-ecommerce/product-models": [
+        "libs/api-interfaces/src/lib/product/index.ts"
+      ],
       "@shared/*": ["apps/project-ecommerce/src/app/shared/*"],
       "@site-management/*": [
         "apps/project-ecommerce/src/app/features/site-management/*"
